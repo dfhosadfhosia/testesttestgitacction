@@ -6,9 +6,9 @@ name: TEST
 on: 
   push:
     branches: 
-      - main
+    - main
     paths:
-      - '/testesttestgitacction/sf/**'
+    - '/testesttestgitacction/sf/**'
 
 jobs:
   notify:

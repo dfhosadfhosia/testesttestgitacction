@@ -10,7 +10,7 @@ on:
     paths:
       - "/sf/**"
 
-Jobs:
+jobs:
   notify:
     name: Slack Notification
     runs-on: ubuntu-latest

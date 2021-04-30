@@ -1,0 +1,27 @@
+# This is a basic workflow to help you get started with Actions
+
+name: TEST
+
+# Controls when the action will run. 
+on: 
+  push:
+    branches: 
+      - main
+    paths:
+      - "/sf/**"
+
+jobs:
+  notify:
+    name: Slack Notification
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Send Notification'
+        run: |
+          jq -n '{
+            attachments: [{
+              pretext: "Swagger が更新されたよ！",
+              color: "good",
+              title: "${{ github.event.pull_request.title }}",
+              title_link: "${{ github.event.pull_request.html_url }}"
+            }]
+          }' | curl -H 'Content-Type: application/json' -d @- ${{ secrets.INCOMING_WEBHOOK_URL }}

@@ -11,12 +11,12 @@ on:
       - "/sf/**"
 
 jobs:
-  # unit tests
-  units:
+  slackNotification:
+    name: Slack Notification
     runs-on: ubuntu-latest
     steps:
-      uses: tokorom/action-slack-incoming-webhook@main
+    - uses: actions/checkout@v2
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2
       env:
-        INCOMING_WEBHOOK_URL: ${{ secrets.INCOMING_WEBHOOK_URL }}
-      with:
-        text: slack-incoming-webhook sample
+        SLACK_WEBHOOK: ${{ secrets.INCOMING_WEBHOOK_URL }}

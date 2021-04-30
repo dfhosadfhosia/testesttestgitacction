@@ -3,14 +3,21 @@
 name: Set COMMIT_MESSAGE
 
 # Controls when the action will run. 
-on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+on: 
   push:
-    branches: [ main ]
-    uses: tokorom/action-slack-incoming-webhook@main
-    env:
-      INCOMING_WEBHOOK_URL: ${{ https://hooks.slack.com/services/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}}
-    with:
-      text: Successfully automated deployment.
-  pull_request:
-    branches: [ main ]
+    branches: 
+      - main
+    path:
+      - "/sf/**"
+name: Slack Notification AI
+jobs:
+  # unit tests
+  units:
+    runs-on: ubuntu-latest
+    steps:
+    - name: post a message to slack
+      uses: tokorom/action-slack-incoming-webhook@main
+      env:
+        INCOMING_WEBHOOK_URL: ${{ secrets.INCOMING_WEBHOOK_URL }}
+      with:
+        text: slack-incoming-webhook sample

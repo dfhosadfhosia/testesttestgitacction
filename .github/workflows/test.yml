@@ -8,7 +8,7 @@ on:
     branches: 
       - main
     paths:
-      - "/sf/**"
+      - "/testesttestgitacction/sf/**"
 
 jobs:
   notify:

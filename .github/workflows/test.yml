@@ -19,9 +19,9 @@ jobs:
         run: |
           jq -n '{
             attachments: [{
-              pretext: "Swagger が更新されたよ！",
+              pretext: "テーブルスキーマが変更されました。",
               color: "good",
-              title: "${{ github.event.pull_request.title }}",
-              title_link: "${{ github.event.pull_request.html_url }}"
+              title: "${{ github.event.push.title }}",
+              title_link: "${{ github.event.push.html_url }}"
             }]
           }' | curl -H 'Content-Type: application/json' -d @- ${{ secrets.INCOMING_WEBHOOK_URL }}

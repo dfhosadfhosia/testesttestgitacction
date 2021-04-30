@@ -7,9 +7,10 @@ on:
   push:
     branches: 
       - main
-    path:
+    paths:
       - "/sf/**"
-name: Slack Notification AI
+      
+
 jobs:
   # unit tests
   units:

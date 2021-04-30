@@ -9,14 +9,12 @@ on:
       - main
     paths:
       - "/sf/**"
-      
 
 jobs:
   # unit tests
   units:
     runs-on: ubuntu-latest
     steps:
-    - name: post a message to slack
       uses: tokorom/action-slack-incoming-webhook@main
       env:
         INCOMING_WEBHOOK_URL: ${{ secrets.INCOMING_WEBHOOK_URL }}

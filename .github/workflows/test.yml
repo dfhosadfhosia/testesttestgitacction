@@ -25,5 +25,13 @@ jobs:
               title: "${{github.event.push}}",
               title_link: "https://api.slack.com/",
               text: "${{github.repositoryUrl}}"
+            },
+            {
+              pretext: "テスト ${{ github}}",
+              color: "good",
+              commits: "${{ github}}",
+              title: "${{github}}",
+              title_link: "https://api.slack.com/",
+              text: "${{github.repositoryUrl}}"
             }]
           }' | curl -H 'Content-Type: application/json' -d @- ${{ secrets.INCOMING_WEBHOOK_URL }}

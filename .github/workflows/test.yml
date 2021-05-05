@@ -27,8 +27,8 @@ jobs:
               text: "${{github.repositoryUrl}}"
             },
             {
-              pretext: "テスト ${{ github}}",
+              pretext: "テスト",
               color: "good",
-              text: "repojitory_rul:${{github.repositoryUrl}}\n messageis${{github.head_commit.message}}\nurl is ${{github.head_commit.url}}"
+              text: "repojitory_rul:${{github.repositoryUrl}}\n message is${{github.event.head_commit.message}}\nurl is ${{github.event.head_commit.url}}"
             }]
           }' | curl -H 'Content-Type: application/json' -d @- ${{ secrets.INCOMING_WEBHOOK_URL }}

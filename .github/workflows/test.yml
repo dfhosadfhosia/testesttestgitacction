@@ -22,8 +22,8 @@ jobs:
               pretext: "テーブルスキーマが変更されました。${{ github.event.push }}",
               color: "good",
               commits: "${{ github.event.push }}",
-              "title": "${{github.event.push}}",
-              "title_link": "https://api.slack.com/",
-              "text": "Optional text that appears within the attachment"
+              title: "${{github.event.push}}",
+              title_link: "https://api.slack.com/",
+              text: "${{github.event.repositoryUrl}}"
             }]
           }' | curl -H 'Content-Type: application/json' -d @- ${{ secrets.INCOMING_WEBHOOK_URL }}

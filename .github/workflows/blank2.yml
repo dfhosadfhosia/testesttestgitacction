@@ -17,4 +17,4 @@ jobs:
     steps:
       - name: 'Send Notification'
         run: |
-         echo ${{github.event}}
+         echo ${{github.event.push}}

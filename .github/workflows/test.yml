@@ -19,7 +19,7 @@ jobs:
         run: |
           jq -n '{
             attachments: [{
-              pretext: "テーブルスキーマが変更されました。",
+              pretext: "テーブルスキーマが変更されました。${{ github.event.push }}",
               color: "good",
               commits: "${{ github.event.push }}",
               title_link: "${{ github.event.push.html_url }}"

@@ -20,7 +20,7 @@ jobs:
           jq -n '{
             attachments: [
             {
-              pretext: "<!aaa> テスト",
+              pretext: "&lt!aaa&gt テスト",
               color: "good",
               text: "repojitory_rul : ${{github.repositoryUrl}}\n message : ${{github.event.head_commit.message}}\n url : ${{github.event.head_commit.url}}"
             }]

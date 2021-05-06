@@ -22,6 +22,6 @@ jobs:
             {
               pretext: "スキーマ変更テスト",
               color: "good",
-              text: "<!general> <!aaa> repojitory_rul : ${{github.repositoryUrl}}\n message : ${{github.event.head_commit.message}}\n url : ${{github.event.head_commit.url}}"
+              text: "<@C02184J4G48> <!aaa> repojitory_rul : ${{github.repositoryUrl}}\n message : ${{github.event.head_commit.message}}\n url : ${{github.event.head_commit.url}}"
             }]
           }' | curl -H 'Content-Type: application/json' -d @- ${{ secrets.INCOMING_WEBHOOK_URL }}

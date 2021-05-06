@@ -18,10 +18,9 @@ jobs:
       - name: 'Send Notification'
         run: |
           jq -n '{
-            channel: "#general",
             attachments: [
             {
-              pretext: "<!channel>テスト",
+              pretext: "<!general>テスト",
               color: "good",
               text: "repojitory_rul : ${{github.repositoryUrl}}\n message : ${{github.event.head_commit.message}}\n url : ${{github.event.head_commit.url}}"
             }]

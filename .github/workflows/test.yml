@@ -19,6 +19,7 @@ jobs:
         run: |
           jq -n '{
             attachments: [
+            {
               pretext: "スキーマ変更テスト",
               color: "good",
               text: "<!general> <!aaa> repojitory_rul : ${{github.repositoryUrl}}\n message : ${{github.event.head_commit.message}}\n url : ${{github.event.head_commit.url}}"

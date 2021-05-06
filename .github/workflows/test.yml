@@ -22,14 +22,14 @@ jobs:
             {
               pretext: "<!subteam^XXX>スキーマファイルに変更がありました。変更を確認してください。",
               color: "good",
-              "fields": [
+              fields: [
                     {
-                      "title": "CommitMessage",
-                      "value": "${{github.event.head_commit.message}}",
+                      title: "CommitMessage",
+                      value: "${{github.event.head_commit.message}}",
                     },
                     {
-                     "title": "CommitURL",
-                     "value": "${{github.event.head_commit.url}}",
+                     title: "CommitURL",
+                     value: "${{github.event.head_commit.url}}",
                     }
                 ]
             }]

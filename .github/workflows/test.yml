@@ -18,16 +18,10 @@ jobs:
       - name: 'Send Notification'
         run: |
           jq -n '{
-            attachments: [{
-              pretext: "テーブルスキーマが変更されました。${{ github.event.push }}",
-              color: "good",
-              commits: "${{ github.event.push }}",
-              title: "${{github.event.push}}",
-              title_link: "https://api.slack.com/",
-              text: "${{github.repositoryUrl}}"
-            },
+            attachments: [
             {
-              pretext: "テスト",
+              channel: "#general",
+              pretext: "<!channel>テスト",
               color: "good",
               text: "repojitory_rul : ${{github.repositoryUrl}}\n message : ${{github.event.head_commit.message}}\n url : ${{github.event.head_commit.url}}"
             }]

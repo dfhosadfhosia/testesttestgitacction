@@ -17,4 +17,4 @@ jobs:
     steps:
       - name: 'Send Notification'
         run: |
-         echo ${{github}}
+         echo '${{ toJSON(github) }}'

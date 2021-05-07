@@ -20,7 +20,7 @@ jobs:
           jq -n '{
             attachments: [
             {
-              pretext: "<!subteam^XXX>スキーマファイルに変更がありました。変更を確認してください。",
+              pretext: "<!subteam^XXX>メッセージ。",
               color: "good",
               fields: [
                     {

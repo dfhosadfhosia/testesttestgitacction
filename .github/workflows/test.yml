@@ -29,7 +29,7 @@ jobs:
                     },
                     {
                      title: "CommitURL",
-                     value: ${{ toJSON(format('result: {0} {1}', github.event.head_commit.message, 'test')) }} ,
+                     value: ${{ toJSON(format('📝 *リリースノート*\n  {0}', github.event.head_commit.message)) }},
                     }
                 ]
             }]

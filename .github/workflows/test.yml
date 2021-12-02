@@ -24,12 +24,12 @@ jobs:
               color: "good",
               fields: [
                     {
-                      title: "CommitMessage",
-                      value: "${{github.event.head_commit.message}}",
+                     title: "CommitURL",
+                     value: "${{github.event.head_commit.url}}",
                     },
                     {
                      title: "CommitURL",
-                     value: "${{github.event.head_commit.url}}",
+                     value: "${{ toJSON(github.event.head_commit.message)}}",
                     }
                 ]
             }]

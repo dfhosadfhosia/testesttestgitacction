@@ -28,4 +28,4 @@ jobs:
                 }
               }
             ]
-          }' | curl -H 'Content-Type: application/json' -d @- ${{ secrets.INCOMING_WEBHOOK_URL_PROJ_CHART_SYS_SERVER }}
+          }' | curl -H 'Content-Type: application/json' -d @- ${{ secrets.INCOMING_WEBHOOK_URL }}

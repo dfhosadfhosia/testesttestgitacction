@@ -15,11 +15,11 @@ jobs:
     name: Slack Notification2
     runs-on: ubuntu-latest
     steps:
-     - name: Set version
-       id: setmsg
-       run: |
-         MSG=$(echo ${{ toJSON(github.event.head_commit.message) }} |sed -e 's/"$//' | sed -e 's/^"//')
-         echo ::set-output name=msg::$MSG
+      - name: Set version
+        id: setmsg
+        run: |
+          MSG=$(echo ${{ toJSON(github.event.head_commit.message) }} |sed -e 's/"$//' | sed -e 's/^"//')
+          echo ::set-output name=msg::$MSG
       - name: 'Send Notification'
         run: |
           jq -n '{

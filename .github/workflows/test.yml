@@ -20,7 +20,7 @@ jobs:
           jq -n '{
             attachments: [
             {
-              pretext: "<!subteam^XXX>メッセージ。",
+              pretext: "<!subteam^C02184J4G48>メッセージ。",
               color: "good",
               fields: [
                     {

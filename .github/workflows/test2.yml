@@ -1,0 +1,31 @@
+# This is a basic workflow to help you get started with Actions
+
+name: TEST
+
+# Controls when the action will run. 
+on: 
+  push:
+    branches: 
+    - main
+    paths:
+    - 'sf/**'
+
+jobs:
+  notify:
+    name: Slack Notification2
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Send Notification'
+        run: |
+          jq -n '{
+            "text": "(${{github.event.release.tag_name}}) リリース 🚀",
+            "blocks": [
+              {
+                "type": "section",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": ${{ toJSON(format('📝 *リリースノート* \\n  {0}', github.event.head_commit.message)) }}
+                }
+              }
+            ]
+          }' | curl -H 'Content-Type: application/json' -d @- ${{ secrets.INCOMING_WEBHOOK_URL_PROJ_CHART_SYS_SERVER }}

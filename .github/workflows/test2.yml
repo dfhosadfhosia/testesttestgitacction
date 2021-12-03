@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: TEST
+name: TEST5
 
 # Controls when the action will run. 
 on: 
@@ -15,10 +15,10 @@ jobs:
     name: Slack Notification2
     runs-on: ubuntu-latest
     steps:
-      - name: Set version
+      - name: Set MSG
         id: setmsg
         run: |
-          MSG=$(echo ${{ toJSON(github.event.head_commit.message) }} |sed -e 's/"$//' | sed -e 's/^"//')
+          MSG=$(echo ${{ toJSON(github.event.head_commit.message) }} |sed -e 's/"$//' | sed -e 's/^"// | sed "s/\"/\\\\\"/g" | sed "s/$(echo -ne '\u201C')/\\\\\"/g" | sed "s/$(echo -ne '\u201D')/\\\\\"/g"')
           echo ::set-output name=msg::$MSG
       - name: 'Send Notification'
         run: |

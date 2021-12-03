@@ -18,7 +18,7 @@ jobs:
       - name: Set MSG
         id: setmsg
         run: |
-          MSG=$(echo -E ${{ toJSON(github.event.head_commit.message) }} |sed -e 's/"$//' | sed -e 's/^"// | sed "s/\"/\\\\\"/g" | sed "s/$(echo -ne '\u201C')/\\\\\"/g" | sed "s/$(echo -ne '\u201D')/\\\\\"/g"')
+          MSG=$(echo -E ${{ toJSON(github.event.head_commit.message) }} |sed -e 's/"$//' | sed -e 's/^"// | sed "s/\"/\\\\\"/g" | sed "s/$(echo -ne '\u201C')/\\\\\"/g" | sed "s/$(echo -ne '\u201D')/\\\\\"/g")
           echo ::set-output name=msg::$MSG
       - name: 'Send Notification'
         run: |
